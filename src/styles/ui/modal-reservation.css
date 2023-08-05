@@ -1,0 +1,316 @@
+.modal-reservation {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transition: 0.3s ease all;
+}
+
+.modal-reservation.active {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	z-index: 10;
+	margin-top: -250px; /* Negative half of height. */
+	margin-left: -250px;
+	background-color: bisque;
+
+	width: 30vw;
+	height: 50vh;
+	border: 3px solid green;
+	border-radius: 20%;
+	transition: 0.2s ease all;
+	box-shadow: 10px 10px 10px var(--white);
+	padding: 2rem;
+}
+.modal-reservation-title {
+	margin-bottom: 1.5rem;
+	text-align: center;
+	font-size: 2rem;
+	font-family: 'Rufina', sans-serif;
+	color: #333;
+}
+
+.modal-reservation-form {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+
+.modal-reservation-fullName {
+	margin-top: 20px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 30px;
+}
+.modal-reservation-form__input {
+	padding: 10px;
+	border: none;
+	outline: none;
+}
+
+.modal-reservation-modal-button {
+	margin-top: 3rem;
+	width: 47.33%;
+	height: 50px;
+	outline: none;
+	border: none;
+	border-radius: 20px;
+	color: #151515;
+	font-size: 1rem;
+	font-family: 'Rufina', sans-serif;
+	transition: 0.2s ease all;
+}
+.modal-reservation-modal-button:hover {
+	transition: 0.2s ease all;
+	color: var(--white);
+	background-color: var(--mainGreen);
+	cursor: pointer;
+}
+
+input[type='text'] {
+	font: 16px/25px 'Muli', sans-serif;
+	color: #333;
+	width: 100%;
+	box-sizing: border-box;
+	letter-spacing: 1px;
+}
+
+:focus {
+	outline: none;
+}
+
+.col-3 {
+	float: left;
+	width: 47.33%;
+	margin: 30px 3%;
+	position: relative;
+} /* necessary to give position: relative to parent. */
+input[type='text'] {
+	font: 15px/24px 'Lato', Arial, sans-serif;
+	color: #333;
+	width: 100%;
+	box-sizing: border-box;
+	letter-spacing: 1px;
+}
+
+.effect-19,
+.effect-20,
+.effect-21 {
+	border: 1px solid #aba9a9;
+	padding: 7px 14px;
+	transition: 0.4s;
+	background: transparent;
+}
+
+.effect-19 ~ .focus-border:before,
+.effect-19 ~ .focus-border:after {
+	content: '';
+	position: absolute;
+	top: -1px;
+	left: 50%;
+	width: 0;
+	height: 2px;
+	background-color: #4caf50;
+	transition: 0.4s;
+}
+.effect-19 ~ .focus-border:after {
+	top: auto;
+	bottom: 0;
+}
+.effect-19 ~ .focus-border i:before,
+.effect-19 ~ .focus-border i:after {
+	content: '';
+	position: absolute;
+	top: 50%;
+	left: 0;
+	width: 2px;
+	height: 0;
+	background-color: #4caf50;
+	transition: 0.6s;
+}
+.effect-19 ~ .focus-border i:after {
+	left: auto;
+	right: 0;
+}
+.effect-19:focus ~ .focus-border:before,
+.effect-19:focus ~ .focus-border:after,
+.has-content.effect-19 ~ .focus-border:before,
+.has-content.effect-19 ~ .focus-border:after {
+	left: 0;
+	width: 100%;
+	transition: 0.4s;
+}
+.effect-19:focus ~ .focus-border i:before,
+.effect-19:focus ~ .focus-border i:after,
+.has-content.effect-19 ~ .focus-border i:before,
+.has-content.effect-19 ~ .focus-border i:after {
+	top: -1px;
+	height: 100%;
+	transition: 0.6s;
+}
+.effect-19 ~ label {
+	position: absolute;
+	left: 14px;
+	width: 100%;
+	top: 10px;
+	color: #151515;
+	transition: 0.3s;
+	z-index: -1;
+	letter-spacing: 0.5px;
+}
+.effect-19:focus ~ label,
+.has-content.effect-19 ~ label {
+	top: -18px;
+	left: 0;
+	font-size: 12px;
+	color: #4caf50;
+	transition: 0.3s;
+}
+
+.effect-20 ~ .focus-border:before,
+.effect-20 ~ .focus-border:after {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 0;
+	height: 2px;
+	background-color: #4caf50;
+	transition: 0.3s;
+}
+.effect-20 ~ .focus-border:after {
+	top: auto;
+	bottom: 0;
+	left: auto;
+	right: 0;
+}
+.effect-20 ~ .focus-border i:before,
+.effect-20 ~ .focus-border i:after {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 2px;
+	height: 0;
+	background-color: #4caf50;
+	transition: 0.4s;
+}
+.effect-20 ~ .focus-border i:after {
+	left: auto;
+	right: 0;
+	top: auto;
+	bottom: 0;
+}
+.effect-20:focus ~ .focus-border:before,
+.effect-20:focus ~ .focus-border:after,
+.has-content.effect-20 ~ .focus-border:before,
+.has-content.effect-20 ~ .focus-border:after {
+	width: 100%;
+	transition: 0.3s;
+}
+.effect-20:focus ~ .focus-border i:before,
+.effect-20:focus ~ .focus-border i:after,
+.has-content.effect-20 ~ .focus-border i:before,
+.has-content.effect-20 ~ .focus-border i:after {
+	height: 100%;
+	transition: 0.4s;
+}
+.effect-20 ~ label {
+	position: absolute;
+	left: 14px;
+	width: 100%;
+	top: 10px;
+	color: #151515;
+	transition: 0.3s;
+	z-index: -1;
+	letter-spacing: 0.5px;
+}
+.effect-20:focus ~ label,
+.has-content.effect-20 ~ label {
+	top: -18px;
+	left: 0;
+	font-size: 12px;
+	color: #4caf50;
+	transition: 0.3s;
+}
+
+.effect-21 ~ .focus-border:before,
+.effect-21 ~ .focus-border:after {
+	content: '';
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 0;
+	height: 2px;
+	background-color: #4caf50;
+	transition: 0.2s;
+	transition-delay: 0.2s;
+}
+.effect-21 ~ .focus-border:after {
+	top: auto;
+	bottom: 0;
+	right: auto;
+	left: 0;
+	transition-delay: 0.6s;
+}
+.effect-21 ~ .focus-border i:before,
+.effect-21 ~ .focus-border i:after {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 2px;
+	height: 0;
+	background-color: #4caf50;
+	transition: 0.2s;
+}
+.effect-21 ~ .focus-border i:after {
+	left: auto;
+	right: 0;
+	top: auto;
+	bottom: 0;
+	transition-delay: 0.4s;
+}
+.effect-21:focus ~ .focus-border:before,
+.effect-21:focus ~ .focus-border:after,
+.has-content.effect-21 ~ .focus-border:before,
+.has-content.effect-21 ~ .focus-border:after {
+	width: 100%;
+	transition: 0.2s;
+	transition-delay: 0.6s;
+}
+.effect-21:focus ~ .focus-border:after,
+.has-content.effect-21 ~ .focus-border:after {
+	transition-delay: 0.2s;
+}
+.effect-21:focus ~ .focus-border i:before,
+.effect-21:focus ~ .focus-border i:after,
+.has-content.effect-21 ~ .focus-border i:before,
+.has-content.effect-21 ~ .focus-border i:after {
+	height: 100%;
+	transition: 0.2s;
+}
+.effect-21:focus ~ .focus-border i:after,
+.has-conten.effect-21 ~ .focus-border i:after {
+	transition-delay: 0.4s;
+}
+.effect-21 ~ label {
+	position: absolute;
+	left: 14px;
+	width: 100%;
+	top: 10px;
+	color: #151515;
+	transition: 0.3s;
+	z-index: -1;
+	letter-spacing: 0.5px;
+}
+.effect-21:focus ~ label,
+.has-content.effect-21 ~ label {
+	top: -18px;
+	left: 0;
+	font-size: 12px;
+	color: #4caf50;
+	transition: 0.3s;
+}

@@ -1,0 +1,48 @@
+.header-section {
+	background-color: var(--mainGreen);
+	padding: 20px;
+}
+
+.header-logo__img {
+	width: 13rem;
+	height: auto;
+	cursor: pointer;
+}
+
+.header-nav {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.header-nav-items.right-block {
+	display: flex;
+	gap: 20px;
+	list-style: none;
+}
+.header-nav-item.phone {
+	font-family: 'Inter', sans-serif;
+}
+
+.header-nav-item.phone {
+	transition: 0.15s ease color;
+	color: var(--pieGreen);
+}
+
+.header-nav-item a {
+	list-style: none;
+	text-decoration: none;
+	color: var(--white);
+}
+.header-nav-item.reservation-link {
+	padding: 1rem 2rem;
+	cursor: pointer;
+	border: 1px solid var(--white);
+}
+
+.header-nav-item.reservation-link:hover {
+	transition: 0.15s ease all;
+	background-color: var(--pieGreen);
+	color: var(--mainGreen);
+	border-color: var(--pieGreen);
+}
