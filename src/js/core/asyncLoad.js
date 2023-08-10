@@ -3,10 +3,10 @@ import { SectionsHtml } from '../sectionsHtml.js'
 
 export class AsyncLoad {
 	constructor() {
-		this.initAnimationsForCore()
-		this.initSectionsHtmlForCore()
+		this.#initAnimationsForCore()
+		this.#initSectionsHtmlForCore()
 	}
-	initAnimationsForCore = () => {
+	#initAnimationsForCore = () => {
 		const heroAnimations = {
 			init() {
 				new Animation('hero-main-img_1', 400, 0, 0.3)
@@ -22,8 +22,12 @@ export class AsyncLoad {
 		}
 		heroAnimations.init()
 	}
-	initSectionsHtmlForCore = () => {
+	#initSectionsHtmlForCore = () => {
 		new SectionsHtml(
+			{
+				classNameContainer: 'preloader-page',
+				sectionHtml: 'preloadPage.html',
+			},
 			{
 				classNameContainer: 'header-container',
 				sectionHtml: 'header.html',
@@ -31,6 +35,14 @@ export class AsyncLoad {
 			{
 				classNameContainer: 'hero-container',
 				sectionHtml: 'hero.html',
+			},
+			{
+				classNameContainer: 'modal-reservation-container',
+				sectionHtml: '../../html/ui/reservation-form.html',
+			},
+			{
+				classNameContainer: 'our-menu-container',
+				sectionHtml: 'ourMenu.html',
 			}
 		)
 	}

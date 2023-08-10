@@ -1,0 +1,44 @@
+.preload-page.active {
+	background: #404924;
+	position: fixed;
+	width: 100vw;
+	height: 100vh;
+	z-index: 100;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	opacity: 1;
+	transition: 0.3s ease-in;
+}
+.preload-page__loader.active {
+	width: 100px;
+	height: 100px;
+}
+.preload-page {
+	background: #404924;
+	position: fixed;
+	width: 100vw;
+	height: 100vh;
+	z-index: 100;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	opacity: 0;
+	transition: 0.3s ease-in;
+}
+
+.preloader-page__img {
+	animation: preload 1.5s ease-out infinite;
+}
+
+@keyframes preload {
+	0% {
+		transform: scale(1);
+	}
+	50% {
+		transform: scale(1.1);
+	}
+	100% {
+		transform: scale(1);
+	}
+}

@@ -17,6 +17,14 @@ export class SectionsHtml {
 		xhr.onreadystatechange = function () {
 			if (xhr.readyState === 4 && xhr.status === 200) {
 				headerContainer.innerHTML = xhr.responseText
+				const preload = document.querySelector('.preload-page')
+				preload.classList.add('active')
+				setTimeout(() => {
+					preload.classList.remove('active')
+					setTimeout(() => {
+						preload.style.display = 'none'
+					}, 1000)
+				}, 2000)
 			}
 		}
 		xhr.send()

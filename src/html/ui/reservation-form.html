@@ -1,0 +1,33 @@
+<div id='reservation-successfully' class="reservation-successfully">
+	<img class='reservation-successfully__img' src="/uploads/successfully_fruit_icon.svg" alt="successfully">
+	<h2 class='reservation-successfully__title'>Thanks for the order</h2>
+</div>
+<div id='reservation-error' class="reservation-error">
+	<img class='reservation-error__img' src="/uploads/error_fruit_icon.svg" alt="error">
+	<h2 class='reservation-successfully__title'>Data entered incorrectly</h2>
+</div>
+<div id='modal-reservation' class="modal-reservation">
+	<h1 class='modal-reservation-title'>Enter Your Details:</h1>
+	<form id='reservation-form' class='modal-reservation-form' action="#">
+		<div class="reservation-inputs">
+			<div class='reservation-form-input'>
+				<label for="reservation_1" class='reservation-form-input__label'>First Name</label>
+				<input id='reservation_1' class='reservation-form-input__input' type='text' name='firstName'>
+
+			</div>
+
+			<div class='reservation-form-input'>
+				<label for="reservation_2" class='reservation-form-input__label'>Last Name</label>
+				<input id='reservation_2' class='reservation-form-input__input' type='text' name='lastName'>
+
+			</div>
+
+			<div class='reservation-form-input'>
+				<label for="reservation_3" class='reservation-form-input__label'>Email</label>
+				<input id='reservation_3' class='reservation-form-input__input' type='email' name='email'>
+
+			</div>
+		</div>
+		<button id='modal-reservation-modal-button' class='modal-reservation-modal-button' type='submit'>Send</button>
+	</form>
+</div>
