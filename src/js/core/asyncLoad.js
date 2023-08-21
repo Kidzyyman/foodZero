@@ -18,8 +18,39 @@ export class AsyncLoad {
 
 				new Animation('hero-main-description-1', 100, 0, -0.15)
 				new Animation('hero-main-description-2', 100, 0, -0.15)
+				new Animation('our-menu-margin-title', 100, -0.1, -0.13, {
+					positionBlock: 'relative',
+					top: '-300px',
+					left: '-260px',
+				})
+				new Animation('our-menu_margin-top', 100, -0.08, -0.13, {
+					positionBlock: 'relative',
+					top: '-300px',
+					left: '-190px',
+				})
+				new Animation('our-menu-block-right-one__img', 100, 0.11, -0.13, {
+					positionBlock: 'absolute',
+					top: '-350px',
+					right: '-300px',
+				})
+				new Animation('excellent-main-img', 0, 0.05, -0.008, {
+					positionBlock: 'relative',
+					top: '-20px',
+					right: '-200px',
+				})
+				new Animation('excellent-leaf-left', 100, 0.07, -0.08, {
+					positionBlock: 'absolute',
+					top: '-180px',
+					left: '380px',
+				})
+				new Animation('excellent-leaf-right', 100, 0, 0.09, {
+					positionBlock: 'relative',
+					top: '450px',
+					right: '-150px',
+				})
 			},
 		}
+
 		heroAnimations.init()
 	}
 	#initSectionsHtmlForCore = () => {
@@ -43,6 +74,10 @@ export class AsyncLoad {
 			{
 				classNameContainer: 'our-menu-container',
 				sectionHtml: 'ourMenu.html',
+			},
+			{
+				classNameContainer: 'excellent-cook-container',
+				sectionHtml: 'excellentCook.html',
 			}
 		)
 	}

@@ -1,0 +1,32 @@
+.excellent-cook-section {
+	position: relative;
+	min-height: 1076px;
+	background-color: #ebf0e4;
+	padding: 14rem 2rem 0;
+	z-index: 3;
+	
+}
+
+.excellent-cook-wrapper {
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-start;
+}
+.excellent-cook-left__leaf {
+	position: absolute;
+	left: 30px;
+	transform: translate(20%, -20%);
+	margin-top: 1.5rem;
+	z-index: 1;
+}
+.excellent-cook-left__img {
+	position: relative;
+	z-index: 2;
+}
+.excellent-cook-right__leaf {
+	position: relative;
+	top: 10px;
+	right: 30px;
+	transform: translateX(50%);
+	margin-top: 1.5rem;
+}

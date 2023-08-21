@@ -1,0 +1,125 @@
+.our-menu {
+	position: relative;
+	min-height: 1240px;
+	top: -1px;
+	overflow-x: hidden;
+	margin-bottom: 13rem;
+}
+
+.our-menu-margin-title {
+	margin-top: 11rem;
+}
+.our-menu_margin-top {
+	margin-top: 1.12rem;
+}
+.our-menu-blocks-one {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+.our-menu-block-right-one__img {
+	position: absolute;
+	z-index: 0;
+	top: 0;
+	right: 0;
+	max-width: 54rem;
+	height: auto;
+}
+
+.title-lg-middle {
+	color: var(--000000, #000);
+	font-feature-settings: 'clig' off, 'liga' off;
+
+	/* Heading 1 */
+	font-family: Rufina;
+	font-size: 6.75rem;
+	font-style: normal;
+	font-weight: 700;
+	line-height: 7.5rem; /* 111.111% */
+}
+.subtitle-md-middle {
+	color: var(--4-d-4-d-4-d, #4d4d4d);
+	font-feature-settings: 'clig' off, 'liga' off;
+
+	/* Body */
+	font-family: Lato;
+	font-size: 1.5rem;
+	font-style: normal;
+	font-weight: 400;
+	line-height: 140%; /* 2.1rem */
+	letter-spacing: 0.03rem;
+}
+.our-menu-block-left-one {
+	width: 33.25rem;
+}
+
+.our-menu-blocks {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: space-between;
+}
+.our-menu-blocks__block {
+	margin-top: 6.75rem;
+	max-width: 49.5rem;
+	width: 100%;
+	height: auto;
+}
+
+.our-menu-blocks__price {
+	margin-bottom: 1.5rem;
+	position: relative;
+	color: var(--000000, #000);
+	text-align: right;
+	font-feature-settings: 'clig' off, 'liga' off;
+
+	/* Heading 4 */
+	font-family: Rufina;
+	font-size: 3rem;
+	font-style: normal;
+	font-weight: 700;
+	line-height: 4rem; /* 133.333% */
+}
+.our-menu-blocks__price::after {
+	margin-top: 0.75rem;
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	content: '';
+	display: block;
+	max-width: 49.5rem;
+	width: 100%;
+	height: 2px;
+
+	animation: shimmer 6s infinite;
+	background: repeating-linear-gradient(
+		-45deg,
+		rgba(255, 255, 255, 0) 0,
+		rgba(255, 255, 255, 0) 1%,
+		rgb(0, 0, 0) 1%,
+		rgb(0, 0, 0) 2%
+	);
+	background-size: 200% 100%;
+	background-position: 100% 0;
+}
+
+.title-lg-small {
+	color: var(--000000, #000);
+	font-feature-settings: 'clig' off, 'liga' off;
+
+	/* Heading 3 */
+	font-family: Rufina;
+	font-size: 4.25rem;
+	font-style: normal;
+	font-weight: 700;
+	line-height: 5.25rem; /* 123.529% */
+}
+
+@keyframes shimmer {
+	0% {
+		background-position: -100% 0;
+	}
+	100% {
+		background-position: 100% 0;
+	}
+}
