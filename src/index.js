@@ -1,4 +1,5 @@
 import { AsyncLoad } from './js/core/asyncLoad.js'
+import { hero } from './js/hero/bowls.js'
 import { ModalReservationWindow } from './js/ui/modalReservation.js'
 ;(function (window) {
 	window.onload = init
@@ -7,5 +8,6 @@ import { ModalReservationWindow } from './js/ui/modalReservation.js'
 
 	function init() {
 		new ModalReservationWindow()
+		hero()
 	}
 })(window, document, undefined)
