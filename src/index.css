@@ -5,6 +5,7 @@
 @import url('styles/hero.css');
 @import url('styles/our-menu.css');
 @import url('styles/excellent-cook.css');
+@import url('styles/post-excellentCook.css');
 
 :root {
 	--mainGreen: #233000;

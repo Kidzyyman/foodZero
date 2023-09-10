@@ -1,0 +1,52 @@
+.post-excellentCook-section {
+	min-height: 867px;
+}
+.post-excellentCook-wrapper {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-top: 12.94rem;
+}
+.post-excellentCook-block {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.post-excellentCook-item__description {
+	width: 31.75rem;
+	color: #4d4d4d;
+	text-align: center;
+}
+.post-excellentCook-item {
+	width: 16.25rem;
+	height: 16.25rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: 16.25rem;
+	background: #ebf0e4;
+}
+
+.title-lg-small {
+	color: #000;
+	text-align: center;
+	font-family: 'Rufina', sans-serif;
+	font-size: 3rem;
+	font-style: normal;
+	font-weight: 700;
+	line-height: 4rem;
+}
+
+.post-excellentCook-item__icon {
+	fill: black;
+	transition: 0.3s ease all;
+}
+
+.post-excellentCook-item__icon path {
+	transition: fill 0.5s;
+}
+
+.post-excellentCook-item__icon:hover {
+	transform: scale(1.05);
+}

@@ -1,13 +1,13 @@
-import { AsyncLoad } from './js/core/asyncLoad.js'
-import { hero } from './js/hero/bowls.js'
+import { asyncLoad } from './js/core/asyncLoad.js'
+import { BowlsHero } from './js/hero/bowls.js'
+import { PostExcellentCook } from './js/postExcellentCook/post-excellentCook.js'
 import { ModalReservationWindow } from './js/ui/modalReservation.js'
-;(function (window) {
-	window.onload = init
+document.addEventListener('DOMContentLoaded', () => {
+	asyncLoad.init()
 
-	new AsyncLoad()
-
-	function init() {
+	setTimeout(() => {
 		new ModalReservationWindow()
-		hero()
-	}
-})(window, document, undefined)
+		new BowlsHero()
+		new PostExcellentCook().initScroll()
+	}, 1000)
+})

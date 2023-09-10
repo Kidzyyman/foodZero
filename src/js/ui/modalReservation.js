@@ -1,42 +1,23 @@
-export class ModalReservationWindow {
-	constructor() {
-		this.reservationButton = document.getElementById('reservation-link')
-		this.modalReservation = document.getElementById('modal-reservation')
-		this.successfullyMessage = document.getElementById(
-			'reservation-successfully'
-		)
-		this.errorMessage = document.getElementById('reservation-error')
-		this.form = document.getElementById('reservation-form')
-
-		this.#bindEventListeners()
+class Modal {
+	constructor(element) {
+		this.element = element
 	}
 
-	#bindEventListeners() {
-		this.reservationButton.addEventListener(
-			'click',
-			this.#handleReservationButtonClick
-		)
-		document.addEventListener('click', this.#handleDocumentClick)
-		this.form.addEventListener('submit', this.#handleFormSubmit)
+	show() {
+		this.element.classList.add('active')
 	}
 
-	#handleReservationButtonClick = () => {
-		this.modalReservation.classList.add('active')
+	hide() {
+		this.element.classList.remove('active')
 	}
 
-	#handleDocumentClick = event => {
-		if (!this.modalReservation.contains(event.target)) {
-			this.modalReservation.classList.remove('active')
-		}
-		if (this.reservationButton.contains(event.target)) {
-			this.modalReservation.classList.add('active')
-		}
+	contains(element) {
+		return this.element.contains(element)
 	}
+}
 
-	#handleFormSubmit = async e => {
-		e.preventDefault()
-
-		const form = e.target
+class FormSubmitter {
+	async submitForm(form) {
 		const formData = new FormData(form)
 		const encodedFormData = new URLSearchParams(formData).toString()
 
@@ -51,24 +32,71 @@ export class ModalReservationWindow {
 
 			form.reset()
 
-			if (response.ok) {
-				this.#showMessage(this.successfullyMessage)
-				console.log('Email sent successfully')
-			} else {
-				this.#showMessage(this.errorMessage)
-				console.error('Email sending failed')
-			}
+			return response.ok
 		} catch (error) {
 			console.error('An error occurred:', error)
+			return false
+		}
+	}
+}
+
+export class ModalReservationWindow {
+	constructor() {
+		this.reservationButton = document.getElementById('reservation-link')
+		this.modalReservation = new Modal(
+			document.getElementById('modal-reservation')
+		)
+		this.successfullyMessage = document.getElementById(
+			'reservation-successfully'
+		)
+		this.errorMessage = document.getElementById('reservation-error')
+		this.form = document.getElementById('reservation-form')
+		this.formSubmitter = new FormSubmitter()
+
+		this.bindEventListeners()
+	}
+
+	bindEventListeners() {
+		this.reservationButton.addEventListener(
+			'click',
+			this.handleReservationButtonClick.bind(this)
+		)
+		document.addEventListener('click', this.handleDocumentClick.bind(this))
+		this.form.addEventListener('submit', this.handleFormSubmit.bind(this))
+	}
+
+	handleReservationButtonClick() {
+		this.modalReservation.show()
+	}
+
+	handleDocumentClick(event) {
+		if (!this.modalReservation.contains(event.target)) {
+			this.modalReservation.hide()
+		}
+		if (this.reservationButton.contains(event.target)) {
+			this.modalReservation.show()
 		}
 	}
 
-	#showMessage(messageElement) {
-		setTimeout(() => {
-			messageElement.classList.add('active')
-		}, 300)
+	async handleFormSubmit(e) {
+		e.preventDefault()
+		const isSuccess = await this.formSubmitter.submitForm(this.form)
+
+		if (isSuccess) {
+			this.showMessage(this.successfullyMessage, 'Email sent successfully')
+		} else {
+			this.showMessage(this.errorMessage, 'Email sending failed', true)
+		}
+	}
+
+	showMessage(messageElement, message, isError = false) {
+		messageElement.textContent = message
+		messageElement.classList.add('active')
 		setTimeout(() => {
 			messageElement.classList.remove('active')
+			if (isError) {
+				messageElement.textContent = ''
+			}
 		}, 3000)
 	}
 }
