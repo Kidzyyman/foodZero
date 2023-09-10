@@ -8,30 +8,30 @@
 @import url('styles/post-excellentCook.css');
 
 :root {
-	--mainGreen: #233000;
-	--white: #fff;
-	--pieGreen: #ebf0e4;
+  --mainGreen: #233000;
+  --white: #fff;
+  --pieGreen: #ebf0e4;
 }
 * {
-	margin: 0;
-	padding: 0;
-	-webkit-touch-callout: none; /* iOS Safari */
-	-webkit-user-select: none; /* Safari */
-	-khtml-user-select: none; /* Konqueror HTML */
-	-moz-user-select: none; /* Old versions of Firefox */
-	-ms-user-select: none; /* Internet Explorer/Edge */
-	user-select: none; /* Non-prefixed version, currently
+  margin: 0;
+  padding: 0;
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Old versions of Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; /* Non-prefixed version, currently
                                   supported by Chrome, Edge, Opera and Firefox */
 }
 
 body {
-	box-sizing: border-box;
-	font-family: 'Rufina', serif;
-	font-size: 16px;
-	overflow-x: hidden;
+  box-sizing: border-box;
+  font-family: 'Rufina', serif;
+  font-size: 16px;
+  overflow-x: hidden;
 }
 
 .container-wrapper-main {
-	max-width: 1645px;
-	margin: 0 auto;
+  max-width: 1645px;
+  margin: 0 auto;
 }

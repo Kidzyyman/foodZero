@@ -6,17 +6,17 @@ const __filename = fileURLToPath(import.meta.url)
 const __dirname = dirname(__filename)
 
 const createTransporter = () => {
-	return nodemailer.createTransport({
-		service: 'Yandex',
-		auth: {
-			user: process.env.EMAIL,
-			pass: process.env.PASSWORD,
-		},
-	})
+  return nodemailer.createTransport({
+    service: 'Yandex',
+    auth: {
+      user: process.env.EMAIL,
+      pass: process.env.PASSWORD,
+    },
+  })
 }
 
 const createMailTemplate = ({ firstName, lastName, email }) => {
-	return `
+  return `
     <table role="presentation" class="container" style="max-width: 600px; margin: 0 auto; padding: 20px; background-color: #ffffff; border-radius: 10px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);">
       <tr>
         <td>
@@ -41,31 +41,31 @@ const createMailTemplate = ({ firstName, lastName, email }) => {
 }
 
 export const sendReservationMail = (req, res) => {
-	const transporter = createTransporter()
-	const { firstName, lastName, email } = req.body
-	const mailTemplate = createMailTemplate({ firstName, lastName, email })
+  const transporter = createTransporter()
+  const { firstName, lastName, email } = req.body
+  const mailTemplate = createMailTemplate({ firstName, lastName, email })
 
-	const mailOptions = {
-		from: req.body.email,
-		to: 'maxim.zhuravlyov111@yandex.ru',
-		subject: 'FoodZero',
-		html: mailTemplate,
-		attachments: [
-			{
-				filename: 'logoFood.png',
-				path: join(__dirname, '../uploads/logoFood.png'),
-				cid: 'logoFood',
-			},
-		],
-	}
+  const mailOptions = {
+    from: req.body.email,
+    to: 'maxim.zhuravlyov111@yandex.ru',
+    subject: 'FoodZero',
+    html: mailTemplate,
+    attachments: [
+      {
+        filename: 'logoFood.png',
+        path: join(__dirname, '../uploads/logoFood.png'),
+        cid: 'logoFood',
+      },
+    ],
+  }
 
-	transporter.sendMail(mailOptions, error => {
-		if (error) {
-			console.error('Error sending email:', error)
-			res.status(500).send('Email sending failed')
-		} else {
-			console.log('Email sent successfully')
-			res.status(200).send('Email sent successfully')
-		}
-	})
+  transporter.sendMail(mailOptions, (error) => {
+    if (error) {
+      console.error('Error sending email:', error)
+      res.status(500).send('Email sending failed')
+    } else {
+      console.log('Email sent successfully')
+      res.status(200).send('Email sent successfully')
+    }
+  })
 }
